@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Neobis_Android_Tour_Guide</string>
+    <string name="restaurants">Рестораны</string>
+    <string name="fitnessCenters">Фитнес центры</string>
+    <string name="cinemas">Кинотетры</string>
+    <string name="astanaguide">ASTANA GUIDE</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
