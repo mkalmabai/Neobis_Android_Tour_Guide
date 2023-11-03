@@ -26,5 +26,8 @@ class MainActivity : AppCompatActivity() {
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = placesToVisit[position]
         }.attach()
+
+
+
     }
 }
