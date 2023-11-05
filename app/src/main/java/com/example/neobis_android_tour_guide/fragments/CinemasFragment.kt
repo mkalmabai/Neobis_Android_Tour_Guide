@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.neobis_android_tour_guide.R
 import com.example.neobis_android_tour_guide.adapter.RecyclerAdapter
+import com.example.neobis_android_tour_guide.data.DataPlaces
 import com.example.neobis_android_tour_guide.databinding.FragmentCinemasBinding
 
 class CinemasFragment : Fragment() {
@@ -24,14 +26,15 @@ class CinemasFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        binding.recyclerView.adapter =
         val recyclerView: RecyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = RecyclerAdapter(fillList())
     }
-    private fun fillList(): List<String> {
-        val data = mutableListOf<String>()
-        (0..30).forEach { i -> data.add("$i element") }
+    private fun fillList(): ArrayList<DataPlaces> {
+        val data = arrayListOf(
+            DataPlaces(R.drawable.chaplin, getString(R.string.namePlaces), getString(R.string.AddressName), getString(
+                R.string.WorkTime), getString(R.string.Distances) )
+        )
         return data
     }
 }

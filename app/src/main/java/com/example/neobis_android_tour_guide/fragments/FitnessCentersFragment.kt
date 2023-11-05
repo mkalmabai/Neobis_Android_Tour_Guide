@@ -8,12 +8,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.neobis_android_tour_guide.adapter.RecyclerAdapter
+import com.example.neobis_android_tour_guide.data.DataPlaces
 import com.example.neobis_android_tour_guide.databinding.FragmentFitnessCentersBinding
 
 class FitnessCentersFragment : Fragment() {
     private var _binding: FragmentFitnessCentersBinding? = null
     private val binding get() = _binding!!
-    private val namesList = listOf<String>("aeeeee","asda","asaaaaaaaaaa")
+    private val namesList = ArrayList<DataPlaces>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
