@@ -11,22 +11,23 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/Maineblue"
+        android:background="@color/mainblue"
         app:title="@string/astanaguide"
         app:titleTextAppearance="@style/ToolBarTextAppearance"
-        app:titleTextColor="@color/Darkblue"
+        app:titleTextColor="@color/darkblue"
         android:paddingVertical="30dp"/>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/Maineblue"
+        android:background="@color/mainblue"
+        android:contentDescription="TabLayout for navigating between tabs"
         app:tabMode="auto"
         app:tabGravity="fill"
         app:tabTextAppearance="@style/TabTextAppearance"
-        app:tabIndicatorColor="@color/Darkblue"
-        app:tabSelectedTextColor="@color/Darkblue"
+        app:tabIndicatorColor="@color/darkblue"
+        app:tabSelectedTextColor="@color/darkblue"
         app:tabTextColor="@color/white"
         app:tabRippleColor="#00FFFFFF">
 

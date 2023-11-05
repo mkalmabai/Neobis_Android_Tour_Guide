@@ -11,56 +11,68 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="6dp">
-
-        <ImageView
-            android:id="@+id/itemImagePlaces"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/itemImagePlacesCard"
             android:layout_width="85dp"
             android:layout_height="85dp"
+            app:cardCornerRadius="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:background="@drawable/rounded_image"
-            tools:src="@color/black"
-            tools:ignore="ContentDescription"/>
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/itemImagePlaces"
+                android:src="@drawable/kinopark"
+                android:scaleType="centerCrop"
+                />
+
+        </androidx.cardview.widget.CardView>
+
 
         <TextView
             android:id="@+id/itemNamePlaces"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:textStyle="bold"
             android:textSize="18sp"
-            app:layout_constraintStart_toEndOf="@+id/itemImagePlaces"
-            app:layout_constraintTop_toTopOf="@+id/itemImagePlaces"
+            android:textColor="@color/blue2"
+            app:layout_constraintStart_toEndOf="@+id/itemImagePlacesCard"
+            app:layout_constraintTop_toTopOf="@+id/itemImagePlacesCard"
             tools:text="Cyclone" />
 
         <TextView
             android:id="@+id/itemAddressName"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:textSize="16sp"
+            android:textColor="@color/darkGrey"
             app:layout_constraintBottom_toTopOf="@id/itemWorkTime"
-            app:layout_constraintStart_toEndOf="@+id/itemImagePlaces"
+            app:layout_constraintStart_toEndOf="@+id/itemImagePlacesCard"
             app:layout_constraintTop_toBottomOf="@+id/itemNamePlaces"
             tools:text="Проспект  Чуй 136" />
 
         <TextView
             android:id="@+id/itemWorkTime"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:textSize="13sp"
-            app:layout_constraintBottom_toBottomOf="@id/itemImagePlaces"
-            app:layout_constraintStart_toEndOf="@+id/itemImagePlaces"
+            android:textColor="@color/grey"
+            app:layout_constraintBottom_toBottomOf="@id/itemImagePlacesCard"
+            app:layout_constraintStart_toEndOf="@+id/itemImagePlacesCard"
             tools:text="Открыт до 24:00" />
 
         <TextView
             android:id="@+id/itemDistances"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="13sp"
-            app:layout_constraintBottom_toBottomOf="@id/itemImagePlaces"
+            android:textColor="@color/grey"
+            app:layout_constraintBottom_toBottomOf="@id/itemImagePlacesCard"
             app:layout_constraintEnd_toEndOf="parent"
             tools:text="1.5км" />
 

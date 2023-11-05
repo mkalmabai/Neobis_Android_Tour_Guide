@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.neobis_android_tour_guide.R
 import com.example.neobis_android_tour_guide.adapter.RecyclerAdapter
 import com.example.neobis_android_tour_guide.data.DataPlaces
 import com.example.neobis_android_tour_guide.databinding.FragmentFitnessCentersBinding
@@ -28,7 +30,19 @@ class FitnessCentersFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.recyclerViewfitness.layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerViewfitness.adapter = RecyclerAdapter(namesList)
+        val recyclerView: RecyclerView = binding.recyclerViewFitness
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.adapter = RecyclerAdapter(fillList())
+    }
+    private fun fillList(): ArrayList<DataPlaces> {
+        val data = arrayListOf(
+
+            DataPlaces(R.drawable.bronx , getString(R.string.nameBronx), getString(R.string.addressBronx), getString(
+                R.string.timeBronx), getString(R.string.distanceBronx)),
+            DataPlaces(R.drawable.invictus, getString(R.string.nameInvictus), getString(R.string.addressInvictus), getString(
+                R.string.timeInvictus), getString(R.string.distanceInvictus)),
+
+            )
+        return data
     }
 }

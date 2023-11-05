@@ -26,14 +26,22 @@ class CinemasFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val recyclerView: RecyclerView = binding.recyclerView
+        val recyclerView: RecyclerView = binding.recyclerViewCinemas
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = RecyclerAdapter(fillList())
     }
     private fun fillList(): ArrayList<DataPlaces> {
         val data = arrayListOf(
-            DataPlaces(R.drawable.chaplin, getString(R.string.namePlaces), getString(R.string.AddressName), getString(
-                R.string.WorkTime), getString(R.string.Distances) )
+
+            DataPlaces(R.drawable.kinopark, getString(R.string.nameKinopark), getString(R.string.addressKinopark), getString(
+                R.string.timeKinopark), getString(R.string.distanceKinopark)),
+            DataPlaces(R.drawable.chaplin, getString(R.string.nameChaplin), getString(R.string.addressChaplin), getString(
+                R.string.timeChaplin), getString(R.string.distanceChaplin)),
+            DataPlaces(R.drawable.arman, getString(R.string.nameArman), getString(R.string.addressArman), getString(
+                R.string.timeArman), getString(R.string.distanceArman)),
+            DataPlaces(R.drawable.keruen, getString(R.string.nameKeruen), getString(R.string.addressKeruen), getString(
+                R.string.timeKeruen), getString(R.string.distanceKeruen)),
+
         )
         return data
     }
