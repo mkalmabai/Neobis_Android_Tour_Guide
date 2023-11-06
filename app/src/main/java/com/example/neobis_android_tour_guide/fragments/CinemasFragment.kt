@@ -8,11 +8,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.neobis_android_tour_guide.R
+import com.example.neobis_android_tour_guide.adapter.Clickable
 import com.example.neobis_android_tour_guide.adapter.RecyclerAdapter
 import com.example.neobis_android_tour_guide.data.DataPlaces
 import com.example.neobis_android_tour_guide.databinding.FragmentCinemasBinding
 
-class CinemasFragment : Fragment() {
+class CinemasFragment : Fragment(), Clickable {
     private var _binding: FragmentCinemasBinding? = null
     private val binding get() = _binding!!
     override fun onCreateView(
@@ -28,7 +29,7 @@ class CinemasFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val recyclerView: RecyclerView = binding.recyclerViewCinemas
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = RecyclerAdapter(fillList())
+        recyclerView.adapter = RecyclerAdapter(fillList(),this)
     }
     private fun fillList(): ArrayList<DataPlaces> {
         val data = arrayListOf(
@@ -44,5 +45,9 @@ class CinemasFragment : Fragment() {
 
         )
         return data
+    }
+
+    override fun onItemClickListener(dataPlaces: DataPlaces) {
+
     }
 }

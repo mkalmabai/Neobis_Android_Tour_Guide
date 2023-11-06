@@ -9,11 +9,12 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.neobis_android_tour_guide.R
+import com.example.neobis_android_tour_guide.adapter.Clickable
 import com.example.neobis_android_tour_guide.adapter.RecyclerAdapter
 import com.example.neobis_android_tour_guide.data.DataPlaces
 import com.example.neobis_android_tour_guide.databinding.FragmentFitnessCentersBinding
 
-class FitnessCentersFragment : Fragment() {
+class FitnessCentersFragment : Fragment(),Clickable{
     private var _binding: FragmentFitnessCentersBinding? = null
     private val binding get() = _binding!!
     private val namesList = ArrayList<DataPlaces>()
@@ -32,7 +33,7 @@ class FitnessCentersFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val recyclerView: RecyclerView = binding.recyclerViewFitness
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = RecyclerAdapter(fillList())
+        recyclerView.adapter = RecyclerAdapter(fillList(),this)
     }
     private fun fillList(): ArrayList<DataPlaces> {
         val data = arrayListOf(
@@ -45,4 +46,9 @@ class FitnessCentersFragment : Fragment() {
             )
         return data
     }
+
+    override fun onItemClickListener(dataPlaces: DataPlaces) {
+        TODO("Not yet implemented")
+    }
+
 }

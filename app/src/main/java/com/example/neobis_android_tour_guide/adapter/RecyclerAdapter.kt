@@ -1,23 +1,29 @@
 package com.example.neobis_android_tour_guide.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.RecyclerView
 import com.example.neobis_android_tour_guide.R
 import com.example.neobis_android_tour_guide.data.DataPlaces
+import com.example.neobis_android_tour_guide.databinding.FragmentRestaurantsBinding
 import com.example.neobis_android_tour_guide.databinding.RecyclerviewItemBinding
+import com.example.neobis_android_tour_guide.fragments.DetailFragment
 
-class RecyclerAdapter(val dataPlaces : ArrayList<DataPlaces>): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>()  {
+
+interface Clickable{
+ fun onItemClickListener(dataPlaces: DataPlaces)
+}
+
+class RecyclerAdapter(val dataPlaces : ArrayList<DataPlaces>, val clickable: Clickable): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>()  {
     class ViewHolder(private val binding: RecyclerviewItemBinding):RecyclerView.ViewHolder(binding.root) {
         val imagePlaces = binding.itemImagePlaces
         val namePlaces = binding.itemNamePlaces
         val addressName = binding.itemAddressName
         val workTime = binding.itemWorkTime
         val distance = binding.itemDistances
-
+        val itemCardId = binding.itemCardId
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -40,6 +46,9 @@ class RecyclerAdapter(val dataPlaces : ArrayList<DataPlaces>): RecyclerView.Adap
         holder.addressName.text = dataplace.address
         holder.workTime.text = dataplace.worktime
         holder.distance.text = dataplace.distance
+        holder.itemCardId.setOnClickListener{
+            clickable.onItemClickListener(dataplace)
+        }
     }
 
 }

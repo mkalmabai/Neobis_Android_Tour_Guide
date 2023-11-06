@@ -8,12 +8,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.neobis_android_tour_guide.R
+import com.example.neobis_android_tour_guide.adapter.Clickable
 import com.example.neobis_android_tour_guide.adapter.RecyclerAdapter
 import com.example.neobis_android_tour_guide.data.DataPlaces
 import com.example.neobis_android_tour_guide.databinding.FragmentRestaurantsBinding
 
 
-class RestaurantsFragment : Fragment() {
+class RestaurantsFragment : Fragment(),Clickable {
     private var _binding: FragmentRestaurantsBinding? = null
     private val binding get() = _binding!!
     override fun onCreateView(
@@ -29,7 +30,7 @@ class RestaurantsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val recyclerView: RecyclerView = binding.recyclerViewRestaurants
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = RecyclerAdapter(fillList())
+        recyclerView.adapter = RecyclerAdapter(fillList(),this)
     }
     private fun fillList(): ArrayList<DataPlaces> {
         val data = arrayListOf(
@@ -44,5 +45,9 @@ class RestaurantsFragment : Fragment() {
                 R.string.timeFarsh), getString(R.string.distanceFarsh)),
         )
         return data
+    }
+
+    override fun onItemClickListener(dataPlaces: DataPlaces) {
+        TODO("Not yet implemented")
     }
 }
