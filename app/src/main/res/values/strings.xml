@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Neobis_Android_Tour_Guide</string>
     <string name="restaurants">Рестораны</string>
     <string name="fitnessCenters">Фитнес центры</string>
@@ -13,7 +13,6 @@
     <string name="nameChaplin">Chaplin cinemas</string>
     <string name="addressChaplin">​ТРЦ MEGA Silk Way​Проспект Кабанбай батыр, 62</string>
     <string name="timeChaplin">Ежедневно с 10:00 до 24:00</string>
-    <string name="distanceChaplin">5 км</string>
     <string name="nameArman">Арман</string>
     <string name="addressArman">ТРЦ Asia park​Проспект Кабанбай батыр, 21</string>
     <string name="timeArman">Ежедневно с 10:00 до 24:00</string>
@@ -25,7 +24,7 @@
     <string name="nameBronx">Bronx Fitness</string>
     <string name="addressBronx">​Проспект Мангилик Ел, 55 B2.4</string>
     <string name="timeBronx">Сегодня c 07:00 до 23:00</string>
-    <string name="distanceBronx">7 км</string>
+    <string name="distanceChaplin">7 км</string>
     <string name="nameInvictus">Invictus go</string>
     <string name="addressInvictus">​Улица Алихан Бокейхан, 25д</string>
     <string name="timeInvictus">Сегодня c 07:00 до 23:00</string>
@@ -42,4 +41,10 @@
     <string name="addressFarsh">​ТРЦ MEGA Silk Way​Проспект Кабанбай батыр, 62</string>
     <string name="timeFarsh">Ежедневно с 10:00 до 22:00</string>
     <string name="distanceFarsh">3 км</string>
+    <string name="descriptionChaplin" >"Любишь смотреть кино? Испытай настоящие эмоции в мире Chaplin Cinemas! "</string>
+    <string name="descriptionKinopark">Kinopark Theatres с сетью кинотеатров Kinoplexx - самая крупная кинотеатральная компания в Центральной Азии, предлагающая уникальную модель ведения бизнеса в сфере развлечений и сопутствующих услуг. Приоритетной позицией для создания нового качественного продукта Kinopark Theatres определил использование только современных технологий в сфере киноиндустрии.</string>
+    <string name="descriptionArman">Арман (Азия Парк) 3D</string>
+    <string name="descriptionKeruen">Камерные и комфортабельные кинозалы Keruen Cinema вместимостью до 14 мест идеально подойдут для проведения Ваших корпоративных, семейных или дружеских мероприятий. Оснащенность кинозалов широкими экранами, современными звуковыми системами и широкими комфортабельными креслами делают Keruen Cinema идеальной площадкой для закрытых показов и презентаций, и лучшим местом для просмотра основной киноафиши.</string>
+    <string name="decriptionfitnes" >Акция! ЦЕЛЫЙ ГОД С ТРЕНЕРОМ от 20 833 тг/ мес</string>
+    <string name="descriptionrestourant">Новый атмосферный бар столицы. Работаем 24/7! Ждём вас</string>
 </resources>

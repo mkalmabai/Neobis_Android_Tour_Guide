@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.neobis_android_tour_guide.R
@@ -29,25 +30,32 @@ class CinemasFragment : Fragment(), Clickable {
         super.onViewCreated(view, savedInstanceState)
         val recyclerView: RecyclerView = binding.recyclerViewCinemas
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = RecyclerAdapter(fillList(),this)
+        recyclerView.adapter = RecyclerAdapter(fillList(), this)
     }
     private fun fillList(): ArrayList<DataPlaces> {
         val data = arrayListOf(
 
-            DataPlaces(R.drawable.kinopark, getString(R.string.nameKinopark), getString(R.string.addressKinopark), getString(
-                R.string.timeKinopark), getString(R.string.distanceKinopark)),
-            DataPlaces(R.drawable.chaplin, getString(R.string.nameChaplin), getString(R.string.addressChaplin), getString(
-                R.string.timeChaplin), getString(R.string.distanceChaplin)),
-            DataPlaces(R.drawable.arman, getString(R.string.nameArman), getString(R.string.addressArman), getString(
-                R.string.timeArman), getString(R.string.distanceArman)),
-            DataPlaces(R.drawable.keruen, getString(R.string.nameKeruen), getString(R.string.addressKeruen), getString(
-                R.string.timeKeruen), getString(R.string.distanceKeruen)),
 
-        )
+            DataPlaces(R.drawable.chaplin, getString(R.string.nameChaplin), getString(R.string.addressChaplin), getString(
+                R.string.timeChaplin), getString(R.string.distanceChaplin),getString(R.string.descriptionChaplin)),
+            DataPlaces(R.drawable.arman, getString(R.string.nameArman), getString(R.string.addressArman), getString(
+                R.string.timeArman), getString(R.string.distanceArman),getString(R.string.descriptionArman)),
+            DataPlaces(R.drawable.keruen, getString(R.string.nameKeruen), getString(R.string.addressKeruen), getString(
+                R.string.timeKeruen), getString(R.string.distanceKeruen),getString(R.string.descriptionKeruen)),
+            DataPlaces(R.drawable.kinopark, getString(R.string.nameKinopark), getString(R.string.addressKinopark), getString(
+                R.string.timeKinopark), getString(R.string.distanceKinopark),getString(R.string.descriptionKinopark)),
+
+
+            )
         return data
     }
 
     override fun onItemClickListener(dataPlaces: DataPlaces) {
-
+        val bundle = Bundle()
+        bundle.putParcelable("dataPlaces", dataPlaces)
+        findNavController().navigate(R.id.action_mainFragment2_to_detailFragment23, bundle)
+//
+//        val action = MainFragmentDirections.actionMainFragment2ToDetailFragment23(dataPlaces)
+//        findNavController().navigate(action)
     }
 }

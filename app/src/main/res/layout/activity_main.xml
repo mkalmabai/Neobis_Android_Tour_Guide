@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:id="@+id/idMainActivity"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,37 +8,10 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/mainblue"
-        app:title="@string/astanaguide"
-        app:titleTextAppearance="@style/ToolBarTextAppearance"
-        app:titleTextColor="@color/darkblue"
-        android:paddingVertical="30dp"/>
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/mainblue"
-        android:contentDescription="TabLayout for navigating between tabs"
-        app:tabMode="auto"
-        app:tabGravity="fill"
-        app:tabTextAppearance="@style/TabTextAppearance"
-        app:tabIndicatorColor="@color/darkblue"
-        app:tabSelectedTextColor="@color/darkblue"
-        app:tabTextColor="@color/white"
-        app:tabRippleColor="#00FFFFFF">
-
-    </com.google.android.material.tabs.TabLayout>
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" >
-    </androidx.viewpager2.widget.ViewPager2>
-
+        android:layout_height="match_parent"
+        app:navGraph="@navigation/navigation" />
 </LinearLayout>

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.neobis_android_tour_guide.R
@@ -36,18 +37,20 @@ class RestaurantsFragment : Fragment(),Clickable {
         val data = arrayListOf(
             DataPlaces(
                 R.drawable.oceanbasket, getString(R.string.nameOceanbasket), getString(R.string.addressOceanbasket), getString(
-                R.string.timeOceanbasket), getString(R.string.distanceOceanbasket)),
+                R.string.timeOceanbasket), getString(R.string.distanceOceanbasket),getString(R.string.descriptionrestourant)),
             DataPlaces(
                 R.drawable.sf, getString(R.string.namesf), getString(R.string.addresssf), getString(
-                R.string.timesf), getString(R.string.distancesf)),
+                R.string.timesf), getString(R.string.distancesf),getString(R.string.descriptionrestourant)),
             DataPlaces(
                 R.drawable.farsh, getString(R.string.nameFarsh ), getString(R.string.addressFarsh), getString(
-                R.string.timeFarsh), getString(R.string.distanceFarsh)),
+                R.string.timeFarsh), getString(R.string.distanceFarsh),getString(R.string.descriptionrestourant)),
         )
         return data
     }
 
     override fun onItemClickListener(dataPlaces: DataPlaces) {
-        TODO("Not yet implemented")
+        val bundle = Bundle()
+        bundle.putParcelable("dataPlaces", dataPlaces)
+        findNavController().navigate(R.id.action_mainFragment2_to_detailFragment23, bundle)
     }
 }

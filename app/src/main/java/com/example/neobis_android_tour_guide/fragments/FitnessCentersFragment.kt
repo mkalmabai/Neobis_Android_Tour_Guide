@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -39,16 +40,18 @@ class FitnessCentersFragment : Fragment(),Clickable{
         val data = arrayListOf(
 
             DataPlaces(R.drawable.bronx , getString(R.string.nameBronx), getString(R.string.addressBronx), getString(
-                R.string.timeBronx), getString(R.string.distanceBronx)),
+                R.string.timeBronx), getString(R.string.distanceInvictus),getString(R.string.decriptionfitnes)),
             DataPlaces(R.drawable.invictus, getString(R.string.nameInvictus), getString(R.string.addressInvictus), getString(
-                R.string.timeInvictus), getString(R.string.distanceInvictus)),
+                R.string.timeInvictus), getString(R.string.distanceInvictus),getString(R.string.descriptionChaplin)),
 
             )
         return data
     }
 
     override fun onItemClickListener(dataPlaces: DataPlaces) {
-        TODO("Not yet implemented")
+        val bundle = Bundle()
+        bundle.putParcelable("dataPlaces", dataPlaces)
+        findNavController().navigate(R.id.action_mainFragment2_to_detailFragment23, bundle)
     }
 
 }

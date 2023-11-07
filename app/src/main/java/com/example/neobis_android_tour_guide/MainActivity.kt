@@ -17,17 +17,5 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val viewPager = binding.viewPager
-        val tabLayout = binding.tabLayout
-
-        val adapter = ViewPagerAdapter(supportFragmentManager, lifecycle)
-        viewPager.adapter = adapter
-
-        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-            tab.text = placesToVisit[position]
-        }.attach()
-
-
-
     }
 }
