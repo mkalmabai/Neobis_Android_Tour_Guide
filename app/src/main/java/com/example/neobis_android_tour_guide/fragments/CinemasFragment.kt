@@ -37,13 +37,13 @@ class CinemasFragment : Fragment(), Clickable {
 
 
             DataPlaces(R.drawable.chaplin, getString(R.string.nameChaplin), getString(R.string.addressChaplin), getString(
-                R.string.timeChaplin), getString(R.string.distanceChaplin),getString(R.string.descriptionChaplin)),
+                R.string.timeChaplin), getString(R.string.distanceChaplin),getString(R.string.descriptionChaplin), getString(R.string.location)),
             DataPlaces(R.drawable.arman, getString(R.string.nameArman), getString(R.string.addressArman), getString(
-                R.string.timeArman), getString(R.string.distanceArman),getString(R.string.descriptionArman)),
+                R.string.timeArman), getString(R.string.distanceArman),getString(R.string.descriptionArman), getString(R.string.location)),
             DataPlaces(R.drawable.keruen, getString(R.string.nameKeruen), getString(R.string.addressKeruen), getString(
-                R.string.timeKeruen), getString(R.string.distanceKeruen),getString(R.string.descriptionKeruen)),
+                R.string.timeKeruen), getString(R.string.distanceKeruen),getString(R.string.descriptionKeruen), getString(R.string.location)),
             DataPlaces(R.drawable.kinopark, getString(R.string.nameKinopark), getString(R.string.addressKinopark), getString(
-                R.string.timeKinopark), getString(R.string.distanceKinopark),getString(R.string.descriptionKinopark)),
+                R.string.timeKinopark), getString(R.string.distanceKinopark),getString(R.string.descriptionKinopark), getString(R.string.location)),
 
 
             )
@@ -54,8 +54,11 @@ class CinemasFragment : Fragment(), Clickable {
         val bundle = Bundle()
         bundle.putParcelable("dataPlaces", dataPlaces)
         findNavController().navigate(R.id.action_mainFragment2_to_detailFragment23, bundle)
-//
+
 //        val action = MainFragmentDirections.actionMainFragment2ToDetailFragment23(dataPlaces)
 //        findNavController().navigate(action)
     }
+
+
+
 }

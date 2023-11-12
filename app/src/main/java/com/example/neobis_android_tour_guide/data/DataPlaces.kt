@@ -10,5 +10,6 @@ data class DataPlaces(
     val address: String,
     val worktime: String,
     val distance: String,
-    val description: String
+    val description: String,
+    val location: String
 ):Parcelable

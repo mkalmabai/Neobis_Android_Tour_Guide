@@ -1,5 +1,9 @@
 package com.example.neobis_android_tour_guide.fragments
 
+import android.content.ActivityNotFoundException
+import android.content.Intent
+import android.graphics.Paint
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.neobis_android_tour_guide.R
@@ -38,9 +43,22 @@ class DetailFragment : Fragment() {
         binding.nameOfDescriptionDetail.text = dataPlaces?.namePlace
         binding.titleDetail.text = dataPlaces?.namePlace
         binding.description.text = dataPlaces?.description
+        binding.addressDetail.paintFlags = binding.addressDetail.paintFlags or Paint.UNDERLINE_TEXT_FLAG
 
-        binding.backButton.setOnClickListener{
+        binding.backButton.setOnClickListener {
             findNavController().navigate(R.id.action_detailFragment2_to_mainFragment23)
+        }
+        binding.addressDetail.setOnClickListener {
+            openMap(dataPlaces?.location.toString())
+        }
+    }
+
+    private fun openMap(location: String) {
+        try {
+            var map = Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=$location"))
+            startActivity(Intent.createChooser(map, "Choose the map"))
+        }catch (e: ActivityNotFoundException){
+            Toast.makeText(activity, "Can not open", Toast.LENGTH_SHORT)
         }
     }
 

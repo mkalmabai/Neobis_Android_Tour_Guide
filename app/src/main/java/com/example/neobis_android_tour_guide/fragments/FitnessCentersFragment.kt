@@ -40,9 +40,9 @@ class FitnessCentersFragment : Fragment(),Clickable{
         val data = arrayListOf(
 
             DataPlaces(R.drawable.bronx , getString(R.string.nameBronx), getString(R.string.addressBronx), getString(
-                R.string.timeBronx), getString(R.string.distanceInvictus),getString(R.string.decriptionfitnes)),
+                R.string.timeBronx), getString(R.string.distanceInvictus),getString(R.string.decriptionfitnes), getString(R.string.location)),
             DataPlaces(R.drawable.invictus, getString(R.string.nameInvictus), getString(R.string.addressInvictus), getString(
-                R.string.timeInvictus), getString(R.string.distanceInvictus),getString(R.string.descriptionChaplin)),
+                R.string.timeInvictus), getString(R.string.distanceInvictus),getString(R.string.descriptionChaplin), getString(R.string.location)),
 
             )
         return data

@@ -37,13 +37,13 @@ class RestaurantsFragment : Fragment(),Clickable {
         val data = arrayListOf(
             DataPlaces(
                 R.drawable.oceanbasket, getString(R.string.nameOceanbasket), getString(R.string.addressOceanbasket), getString(
-                R.string.timeOceanbasket), getString(R.string.distanceOceanbasket),getString(R.string.descriptionrestourant)),
+                R.string.timeOceanbasket), getString(R.string.distanceOceanbasket),getString(R.string.descriptionrestourant), getString(R.string.location)),
             DataPlaces(
                 R.drawable.sf, getString(R.string.namesf), getString(R.string.addresssf), getString(
-                R.string.timesf), getString(R.string.distancesf),getString(R.string.descriptionrestourant)),
+                R.string.timesf), getString(R.string.distancesf),getString(R.string.descriptionrestourant), getString(R.string.location)),
             DataPlaces(
                 R.drawable.farsh, getString(R.string.nameFarsh ), getString(R.string.addressFarsh), getString(
-                R.string.timeFarsh), getString(R.string.distanceFarsh),getString(R.string.descriptionrestourant)),
+                R.string.timeFarsh), getString(R.string.distanceFarsh),getString(R.string.descriptionrestourant), getString(R.string.location)),
         )
         return data
     }
